@@ -20,19 +20,12 @@ namespace Game.Characters{
 		[SerializeField] protected WeaponConfig _activeWeapon;
 		[SerializeField] protected AnimationClip _attackAnimation;
 		[SerializeField] protected AnimationClip[] _deathAnimations;
-		[SerializeField] AudioClip[] _hitAudio;
-        public AudioClip[] GetHitAudio()
-        {
-            return _hitAudio;
-        }
-
 		protected HealthSystem _healthSystem;
 		protected AudioSource _audioSource;
 		public HealthSystem GetHealthSystem()
 		{
 			return _healthSystem;
 		}
-
 		protected BoxCollider[] _hitAreas;
 		[HideInInspector] public string DEFAULT_ATTACK = "DEFAULT_ATTACK";
 		protected const string DEFAULT_DEATH = "DEFAULT_DEATH";
@@ -45,7 +38,7 @@ namespace Game.Characters{
             get{return _killed;}
         }
 
-        protected bool _inAnimation = false;
+        [SerializeField] protected bool _inAnimation = false;
         public bool inAnimation{get{return _inAnimation;}}
 
 		public IEnumerator KillCharacter()
@@ -94,6 +87,7 @@ namespace Game.Characters{
 			_killed = true;
 			yield return null;
 		}
+
 		protected void PlayAudio() //Used as a placholder for weapon audio in animation events for weapons. 
         {
 			if (_audioSource == null) return;

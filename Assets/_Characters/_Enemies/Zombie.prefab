@@ -1306,6 +1306,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 100
   _maxHealth: 100
+  _hitAudio:
+  - {fileID: 8300000, guid: 42741e564a2454f259ea95a2598f0deb, type: 3}
+  - {fileID: 8300000, guid: 86c3632b85cab441aa9e4573b6999952, type: 3}
 --- !u!114 &114686377781836480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,9 +1329,6 @@ MonoBehaviour:
   - {fileID: 7400000, guid: f538d4d75e47a314c86dfb82261207b9, type: 3}
   - {fileID: 7400000, guid: 32b1d03a7b084a343a777d3a7815866b, type: 3}
   - {fileID: 7400000, guid: 5fa3716fb51c5d2448c0c050e0803819, type: 3}
-  _hitAudio:
-  - {fileID: 8300000, guid: 42741e564a2454f259ea95a2598f0deb, type: 3}
-  - {fileID: 8300000, guid: 86c3632b85cab441aa9e4573b6999952, type: 3}
   DEFAULT_ATTACK: DEFAULT_ATTACK
   ANIMATION_ATTACK: Attack
   _attackDistance: 0.98

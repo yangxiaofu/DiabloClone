@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Game.Characters{
 	public class HealthSystem : MonoBehaviour {
 		[SerializeField] protected float _currentHealth = 100f;
+		[SerializeField] protected float _maxHealth = 100f;
+		[SerializeField] AudioClip[] _hitAudio;
+
 		public float GetCurrentHealth()
 		{
 			return _currentHealth;
@@ -16,7 +19,7 @@ namespace Game.Characters{
 			_currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
 		}
 
-		[SerializeField] protected float _maxHealth = 100f;
+
 		public float GetMaxHealth()
 		{
 			return _maxHealth;
@@ -39,13 +42,13 @@ namespace Game.Characters{
 			}
 
 			_currentHealth = Mathf.Clamp(_currentHealth, 0, _currentHealth);
-            
         }
 
         private void PlayCharacterHitAudio()
         {
-            var character = GetComponent(typeof(Character)) as Character;
-            var audio = character.GetHitAudio()[UnityEngine.Random.Range(0, character.GetHitAudio().Length)];
+			if (_hitAudio.Length == 0) return;
+			
+            var audio = _hitAudio[UnityEngine.Random.Range(0, _hitAudio.Length)];
 
 			if (!audio) return;
 			
@@ -53,7 +56,6 @@ namespace Game.Characters{
             GetComponent<AudioSource>().loop = false;
             GetComponent<AudioSource>().Play();
         }
-
     }
 
 }
