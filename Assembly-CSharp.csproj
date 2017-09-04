@@ -57,10 +57,10 @@
      <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyHealthBar.cs" />
      <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyUI.cs" />
-     <Compile Include="Assets\_Characters\_Player\EnergySystem.cs" />
      <Compile Include="Assets\_Characters\_Player\InventorySystem.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerMovement.cs" />
+     <Compile Include="Assets\_Characters\_Player\SpecialAbilitiesSystem.cs" />
      <Compile Include="Assets\_Characters\Character.cs" />
      <Compile Include="Assets\_Characters\CharacterMovement.cs" />
      <Compile Include="Assets\_Characters\HealthSystem.cs" />

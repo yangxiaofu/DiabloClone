@@ -771,6 +771,7 @@ GameObject:
   - component: {fileID: 114126571606281710}
   - component: {fileID: 114701329294432988}
   - component: {fileID: 114286484532027794}
+  - component: {fileID: 114588692075923768}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2037,11 +2038,23 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 5fa3716fb51c5d2448c0c050e0803819, type: 3}
   DEFAULT_ATTACK: DEFAULT_ATTACK
   ANIMATION_ATTACK: Attack
+  _inAnimation: 0
   _projectilePrefab: {fileID: 1468184632350258, guid: f0e27894887b7476ab9e05b0dd26f83c,
     type: 2}
   _projectileSocket: {fileID: 4484936649577664}
-  _ability: {fileID: 11400000, guid: 241c3eedc59664d5f956644a14abe3e6, type: 2}
   _meleeRange: 2
+--- !u!114 &114588692075923768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812238878786844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a9330ee8da54d4aae2508c54c0d1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ability: {fileID: 11400000, guid: 241c3eedc59664d5f956644a14abe3e6, type: 2}
 --- !u!114 &114701329294432988
 MonoBehaviour:
   m_ObjectHideFlags: 1

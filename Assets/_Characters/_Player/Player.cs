@@ -13,7 +13,7 @@ namespace Game.Characters{
 	public class Player : Character {
         [SerializeField] GameObject _projectilePrefab; //TODO: Refactor out to weapon later.
         [SerializeField] Transform _projectileSocket;
-        [SerializeField] SpecialAbilities _ability;
+
         
         [TooltipAttribute("Anything within this range will use a melee weapon for attacking.")]
         [SerializeField] float _meleeRange = 2f;
@@ -27,7 +27,6 @@ namespace Game.Characters{
             GetCharacterComponents();
             GetPlayerComponents();
             PerformAssertions();
-            _ability.AttachComponentTo(this.gameObject);
             SetupHitAreaBoxCollidersOnBodyParts(); //Needs setup for 
             RegisterToRaycaster();
             PutWeaponInHand(_inventory.GetWeapon(0));
@@ -146,16 +145,7 @@ namespace Game.Characters{
         {
             if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
             {
-                if (_ability.GetEnergyConsumption() <= GetComponent<EnergySystem>().GetCurrentEnergy())
-                {
-                    _ability.Use();
-                }
-                else
-                {
-                    //TODO: Add voie that says you are out of energy.
-                    print("Can not use the special ability");
-                }
-
+                GetComponent<SpecialAbilitiesSystem>().UseSpecialAbility();
             }
         }
 

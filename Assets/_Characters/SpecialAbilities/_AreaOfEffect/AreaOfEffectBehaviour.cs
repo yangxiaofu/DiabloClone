@@ -25,7 +25,7 @@ namespace Game.Characters{
 
         private void ConsumeEnergy()
         {
-            GetComponent<EnergySystem>().ConsumeEnergy(_config.GetEnergyConsumption());
+            GetComponent<SpecialAbilitiesSystem>().ConsumeEnergy(_config.GetEnergyConsumption());
         }
 
         private void PlayParticleSystem()
