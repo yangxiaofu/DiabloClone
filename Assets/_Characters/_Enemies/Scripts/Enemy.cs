@@ -59,6 +59,9 @@ namespace Game.Characters{
 
 		private IEnumerator AttackPlayer()
         {
+
+            Invoke("DisableHitAreas", _attackAnimation.length);
+
 			_isAttacking = true;
 			this.transform.LookAt(_player.transform); //TODO: Remove thsi and put in another coroutine to turn faster. 
             _animOC[DEFAULT_ATTACK] = _attackAnimation;

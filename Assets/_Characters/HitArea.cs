@@ -18,16 +18,19 @@ namespace Game.Items{
 
 		void OnTriggerEnter(Collider other)
 		{	
-			
-			if (other.gameObject.GetComponent(typeof(Character))) //TODO: Make changes later if it is a human hitting opposing enemy.
-			{  
-				Assert.IsNotNull(_defender,
-					"You have not targeted a defender."
-				);
+			Assert.IsNotNull(_defender,
+				"The defender is null.  Looks like you should initalize the defender first before it enters the trigger."
+			);
 
-				_defender.GetHealthSystem().TakeDamage(_attacker.GetHitDamage());
+			if (other.gameObject.GetComponent<Player>() && _defender.GetComponent<Player>()){
+				_defender.GetComponent<Player>()
+					.GetHealthSystem()
+					.TakeDamage(_attacker.GetHitDamage());	
+			} else if (other.gameObject.GetComponent<Enemy>() && _defender.GetComponent<Enemy>()){
+				_defender.GetComponent<Enemy>()
+					.GetHealthSystem()
+					.TakeDamage(_attacker.GetHitDamage());	
 			}
-
 		}
 	}
 

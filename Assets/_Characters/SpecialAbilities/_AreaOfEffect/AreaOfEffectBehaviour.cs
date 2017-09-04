@@ -20,6 +20,7 @@ namespace Game.Characters{
             PlayParticleSystem();
             SetupAttackAnimation();
             DealDamageToEnemies();
+            StartCoroutine(_player.EndInAnimation(_config.GetAnimation().length));
         }
 
         private void ConsumeEnergy()
@@ -34,7 +35,6 @@ namespace Game.Characters{
             var particleSystem = particleSystemObject.GetComponent<ParticleSystem>();
             particleSystem.Play();
             Destroy(particleSystem.gameObject, particleSystem.main.duration);
-
         }
 
         private void SetupAttackAnimation()
