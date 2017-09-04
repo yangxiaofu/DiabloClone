@@ -8,6 +8,12 @@ namespace Game.Characters{
 		[SerializeField] AnimationClip _animation;
 		[SerializeField] AudioClip _audioClip;
 		[SerializeField] ParticleSystem _particleSystem;
+		[SerializeField] float _energyConsumed = 50f;
+
+		public float GetEnergyConsumption()
+		{
+			return _energyConsumed;
+		}
 		public abstract void AttachComponentTo(GameObject gameobjectToAttachTo);
 		protected SpecialAbilitiesBehaviour _behaviour;
 		public void Use(){

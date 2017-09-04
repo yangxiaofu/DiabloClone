@@ -8,7 +8,7 @@ namespace Game.Characters{
 	public class AreaOfEffect : SpecialAbilities {
 		[HeaderAttribute("Area of Effect Specific")]
 		[SerializeField] float _damageRadius = 2f;
-		[SerializeField] float _energyConsumed = 50f;
+
 
         public override void AttachComponentTo(GameObject gameobjectToAttachTo)
         {
@@ -21,10 +21,7 @@ namespace Game.Characters{
 			return _damageRadius;
 		}
 
-		public float GetEnergyConsume()
-		{
-			return _energyConsumed;
-		}
+		
 
     
 	}

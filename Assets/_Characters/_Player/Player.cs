@@ -21,8 +21,7 @@ namespace Game.Characters{
         GameObject weaponObject;
         Enemy _targetedEnemy;
         InventorySystem _inventory;
-        [SerializeField] float _currentEnergy = 100f;
-        [SerializeField] float _maxEnergy = 100f;
+
         void Start()
         {
             GetCharacterComponents();
@@ -120,21 +119,43 @@ namespace Game.Characters{
 
         void OnMouseOverEnemy(Enemy enemy)
         {
+            ScanForAttack(enemy);
+            ScanForDefensiveTrigger();
+            ScanForSpecialAbility();
+        }
+
+        private void ScanForAttack(Enemy enemy)
+        {
             if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
             {
                 _targetedEnemy = enemy;
                 FaceToward(_targetedEnemy.transform); //TODO: Consider changing later so that a rotation happens. 
                 PerformAttack(enemy);
             }
+        }
 
+        private void ScanForDefensiveTrigger()
+        {
             if (Input.GetMouseButtonDown(1))
             {
                 Debug.LogWarning("Defensive Attack.  Needs implemented");
             }
+        }
 
+        private void ScanForSpecialAbility()
+        {
             if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
             {
-                _ability.Use();
+                if (_ability.GetEnergyConsumption() <= GetComponent<EnergySystem>().GetCurrentEnergy())
+                {
+                    _ability.Use();
+                }
+                else
+                {
+                    //TODO: Add voie that says you are out of energy.
+                    print("Can not use the special ability");
+                }
+
             }
         }
 

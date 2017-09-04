@@ -11,13 +11,20 @@ namespace Game.Characters{
         {
             _player = GetComponent<Player>();
             _anim = GetComponent<Animator>();
+            
         }
 
         public override void Use()
         {
+            ConsumeEnergy();
             PlayParticleSystem();
             SetupAttackAnimation();
             DealDamageToEnemies();
+        }
+
+        private void ConsumeEnergy()
+        {
+            GetComponent<EnergySystem>().ConsumeEnergy(_config.GetEnergyConsumption());
         }
 
         private void PlayParticleSystem()

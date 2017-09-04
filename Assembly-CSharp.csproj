@@ -51,11 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_CameraUI\EnergyBar\EnergyBar.cs" />
      <Compile Include="Assets\_CameraUI\HealthBar\PlayerHealthBar.cs" />
      <Compile Include="Assets\_Characters\_Enemies\Scripts\Enemy.cs" />
      <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyHealthBar.cs" />
      <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\_Characters\_Enemies\Scripts\EnemyUI.cs" />
+     <Compile Include="Assets\_Characters\_Player\EnergySystem.cs" />
      <Compile Include="Assets\_Characters\_Player\InventorySystem.cs" />
      <Compile Include="Assets\_Characters\_Player\Player.cs" />
      <Compile Include="Assets\_Characters\_Player\PlayerMovement.cs" />

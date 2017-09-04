@@ -98,12 +98,14 @@ namespace Game.Characters{
         {
 			if (_audioSource == null) return;
 
-			Assert.IsNotNull(_activeWeapon);
-			Assert.IsNotNull(_activeWeapon.GetAudioClip(), "There is no audio attached to the active weapon");
-			Debug.Log(_activeWeapon.GetAudioClip());
-            _audioSource.clip = _activeWeapon.GetAudioClip();
-            _audioSource.loop = false;
-            _audioSource.Play();
+			if (_activeWeapon != null)
+			{
+				Assert.IsNotNull(_activeWeapon.GetAudioClip(), "There is no audio attached to the active weapon");
+				_audioSource.clip = _activeWeapon.GetAudioClip();
+				_audioSource.loop = false;
+				_audioSource.Play();
+			}
+			
         }
 
         public float GetHitDamage()
