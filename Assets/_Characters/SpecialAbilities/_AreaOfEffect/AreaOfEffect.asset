@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9b3009c43d84b58bcc1b731f477d89, type: 3}
+  m_Name: AreaOfEffect
+  m_EditorClassIdentifier: 
+  _attackDamage: 50
+  _animation: {fileID: 7400000, guid: 98bf046065f24b04786d583c7c3c999b, type: 3}
+  _audioClip: {fileID: 8300000, guid: b2d7f6065c653468daacb35cec1e6c6b, type: 3}
+  _particleSystem: {fileID: 198848679956457152, guid: 3a8d2c396810e49079fe2211956078d4,
+    type: 2}
+  _damageRadius: 2
+  _energyConsumed: 50

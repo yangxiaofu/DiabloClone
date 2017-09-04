@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf8ce1eb612e4d5b95c4736d29d89b4, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  _itemPrefab: {fileID: 1016328455765892, guid: 0a065eae62cd6492ca33631f912fa210,
+    type: 2}
+  _gripTransform: {fileID: 4382233651753462, guid: 014e1d9a2e0da4b7ea1d278391053e1c,
+    type: 2}
+  _weaponAnimation: {fileID: 7400000, guid: 668fdc4f7012b7943a1e3a891aedc143, type: 3}
+  _audioClip: {fileID: 8300000, guid: 148a51b2fd7ef49039a02da0ad835292, type: 3}
+  _attackDamage: 100
