@@ -51,7 +51,6 @@ namespace Game.Characters{
         private void ScanForWeaponKeyInput()
         {
             if (_inAnimation) {
-                Debug.Log("Currently in Animation, so cannot switch weapons now");
                 return;
             }
             
@@ -123,6 +122,7 @@ namespace Game.Characters{
 
         void OnMouseOverEnemy(Enemy enemy)
         {
+            if (_inAnimation) return;
             ScanForAttack(enemy);
             ScanForDefensiveTrigger();
             ScanForSpecialAbility();
