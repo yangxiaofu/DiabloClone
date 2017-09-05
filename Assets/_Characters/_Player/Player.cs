@@ -217,7 +217,6 @@ namespace Game.Characters{
         void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(this.transform.position, _meleeRange);
-
         }
     }
 }

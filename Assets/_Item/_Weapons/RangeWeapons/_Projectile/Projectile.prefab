@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpeed: 20
-  _projectileDamage: 100
+  _projectileDamage: 10
   _timeBeforeDestroying: 2
 --- !u!135 &135016038764535240
 SphereCollider:

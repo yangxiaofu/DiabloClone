@@ -20,6 +20,10 @@ namespace Game.Characters{
             SetupHitAreaBoxCollidersOnBodyParts();
             OverrideAnimatorController();
         }
+        void Shoot() //Used for the animation event.
+        {
+           Debug.LogError("The enemy is shooting for some reason");
+        }
 
         void Update()
         {			
@@ -31,7 +35,6 @@ namespace Game.Characters{
 
             DetermineAttackBehaviour();
         }
-
 
         private void FindPlayer()
         {
@@ -64,7 +67,6 @@ namespace Game.Characters{
 
 			_isAttacking = true;
 			this.transform.LookAt(_player.transform); //TODO: Remove thsi and put in another coroutine to turn faster. 
-            _animOC[DEFAULT_ATTACK] = _attackAnimation;
 			while (_isAttacking && !_killed)
             {
                 GetComponent<NavMeshAgent>().isStopped = true;
