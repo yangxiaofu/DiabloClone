@@ -301,13 +301,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.92195123
-        functionName: BeginningOfAnimation
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0
         functionName: EndOfAnimation
         data: 
@@ -317,6 +310,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.28657314
         functionName: PlayAudio
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.92195123
+        functionName: EndOfAnimation
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

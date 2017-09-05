@@ -15,7 +15,7 @@ TagManager:
   - 
   - POTENTIALLY_WALKABLE
   - INVISIBLE_TO_RAYCAST
-  - 
+  - ENEMY
   - 
   - 
   - 

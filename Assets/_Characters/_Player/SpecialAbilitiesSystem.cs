@@ -20,9 +20,9 @@ namespace Game.Characters{
             RegenerateEnergy();
         }
 
-		public void UseSpecialAbility()
+		public void AttemptSpecialAbility()
 		{
-			 if (_ability.GetEnergyConsumption() <= GetCurrentEnergy())
+			if (_ability.GetEnergyConsumption() <= GetCurrentEnergy())
 			{
 				_ability.Use();
 			}

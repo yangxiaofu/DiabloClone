@@ -145,7 +145,7 @@ namespace Game.Characters{
         {
             if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
             {
-                GetComponent<SpecialAbilitiesSystem>().UseSpecialAbility();
+                GetComponent<SpecialAbilitiesSystem>().AttemptSpecialAbility();
             }
         }
 

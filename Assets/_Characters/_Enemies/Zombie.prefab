@@ -1331,6 +1331,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 5fa3716fb51c5d2448c0c050e0803819, type: 3}
   DEFAULT_ATTACK: DEFAULT_ATTACK
   ANIMATION_ATTACK: Attack
+  _inAnimation: 0
   _attackDistance: 0.98
   _timeBetweenAttacks: 2
 --- !u!114 &114780674512699210
@@ -1371,7 +1372,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1b71a1f7f5bf1144a877ef8fa4ab25e5, type: 2}
+  - {fileID: 2100000, guid: 4dc03d2bc490347bcbc2e33110a0f64e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1438,7 +1439,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1b71a1f7f5bf1144a877ef8fa4ab25e5, type: 2}
+  - {fileID: 2100000, guid: 4dc03d2bc490347bcbc2e33110a0f64e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

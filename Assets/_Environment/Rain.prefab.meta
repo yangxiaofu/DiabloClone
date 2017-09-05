@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: d76d1b836890544d3a88a7d920f059be
+labels:
+- LevelSetup
 timeCreated: 1503175538
 licenseType: Free
 NativeFormatImporter:
