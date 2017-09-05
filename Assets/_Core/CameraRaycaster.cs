@@ -12,13 +12,16 @@ namespace Game.CameraUI{
         public delegate void MouseOverEnemy(Enemy enemy);
         public event MouseOverEnemy NotifyMouseOverEnemyObservers;
 
+        
+
 		void FixedUpdate()
 		{
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-			if(Physics.Raycast(ray, out hit))
+			if(Physics.Raycast(ray, out hit, 20000, 1<<8))
             {
+                Debug.Log("Hit something " + hit.point);
                 if(RaycastForPotentiallyWalkableLayer(hit)) return;
             }
         }

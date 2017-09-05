@@ -10,10 +10,8 @@ namespace Game.Characters{
         void Start() 
         {
             _player = GetComponent<Player>();
-            _anim = GetComponent<Animator>();
-            
+            _anim = GetComponent<Animator>();  
         }
-
         public override void Use()
         {
             ConsumeEnergy();
