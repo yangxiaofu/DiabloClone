@@ -48,6 +48,13 @@ namespace Game.Characters{
             Destroy(this.gameObject);
         }
 
+		public IEnumerator EndInAnimation(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            _inAnimation = false;
+            yield return null;
+        }
+
 		protected void GetCharacterComponents()
 		{
 			_healthSystem = GetComponent<HealthSystem>();
@@ -105,13 +112,6 @@ namespace Game.Characters{
         public float GetHitDamage()
         {
             return _hitDamage;
-        }
-
-		
-		///Used to help keep the player from moving while string. 
-        protected void BeginningOfAnimation()//Callback to animation events
-        { 
-            _inAnimation = true;
         }
 
 		///Used to continue player movement.

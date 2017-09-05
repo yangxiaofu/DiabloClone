@@ -50,6 +50,11 @@ namespace Game.Characters{
 
         private void ScanForWeaponKeyInput()
         {
+            if (_inAnimation) {
+                Debug.Log("Currently in Animation, so cannot switch weapons now");
+                return;
+            }
+            
             if (Input.GetKeyDown("1"))
             {
                 PutWeaponInHand(_inventory.GetWeapon(0));
@@ -156,17 +161,11 @@ namespace Game.Characters{
 
         private void PerformAttack(Enemy enemy)
         {
+            _inAnimation = true;
             var distanceFromEnemy = Vector3.Distance(enemy.transform.position, this.transform.position);
             _animOC[DEFAULT_ATTACK] = _activeWeapon.GetAnimation();
             _anim.SetTrigger(ANIMATION_ATTACK);
             StartCoroutine(EndInAnimation(_activeWeapon.GetAnimation().length));
-        }
-
-        public IEnumerator EndInAnimation(float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            _inAnimation = false;
-            yield return null;
         }
 
         void Shoot() //Used for the animation event.
@@ -185,8 +184,8 @@ namespace Game.Characters{
             this.transform.LookAt(target);
         }
 
-        void BeginHit()
-        { //Used as an event in the animator.
+        void BeginHit()//Used as an event in the animator.
+        { 
             if (weaponObject == null)
             {
                 var hitArea = weaponObject.GetComponentInChildren<HitArea>();
@@ -196,13 +195,14 @@ namespace Game.Characters{
             else if (weaponObject.GetComponent(typeof(MeleeWeapon)))
             {
                 
-                weaponObject.GetComponent<MeleeWeapon>().Initialize(_activeWeapon as MeleeWeaponConfig, _targetedEnemy, this);
+                weaponObject.GetComponent<MeleeWeapon>()
+                    .Initialize(_activeWeapon as MeleeWeaponConfig, _targetedEnemy, this);
                 weaponObject.GetComponent<BoxCollider>().enabled = true;
             }    
 		}
 
-		void EndHit()
-        {//Used as an event in the animator.
+		void EndHit()//Used as an event in the animator.
+        {
             if (weaponObject == null)
             {  // IF NO WEAPON EQUIPPED
                 var hitArea = weaponObject.GetComponentInChildren<HitArea>();

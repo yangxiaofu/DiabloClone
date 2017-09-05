@@ -20,11 +20,6 @@ namespace Game.Characters{
             SetupHitAreaBoxCollidersOnBodyParts();
             OverrideAnimatorController();
         }
-        void Shoot() //Used for the animation event.
-        {
-           Debug.LogError("The enemy is shooting for some reason");
-        }
-
         void Update()
         {			
             if (_killed)
@@ -62,17 +57,13 @@ namespace Game.Characters{
 
 		private IEnumerator AttackPlayer()
         {
-
             Invoke("DisableHitAreas", _attackAnimation.length);
-
 			_isAttacking = true;
 			this.transform.LookAt(_player.transform); //TODO: Remove thsi and put in another coroutine to turn faster. 
 			while (_isAttacking && !_killed)
             {
                 GetComponent<NavMeshAgent>().isStopped = true;
-				_anim.SetTrigger(
-                    ANIMATION_ATTACK
-                );
+				_anim.SetTrigger(ANIMATION_ATTACK);
 				yield return new WaitForSeconds(_timeBetweenAttacks);	
 			}
 
@@ -95,7 +86,7 @@ namespace Game.Characters{
             DisableHitAreas();
         }
 
-        private void DisableHitAreas()
+        private void DisableHitAreas() //Used on an invoke method.
         {
             for (int i = 0; i < _hitAreas.Length; i++)
             {
