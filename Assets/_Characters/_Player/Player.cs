@@ -23,6 +23,7 @@ namespace Game.Characters{
         GameObject weaponObject;
         Enemy _targetedEnemy;
         InventorySystem _inventory;
+        [SerializeField] float _attackRadius = 2f;
 
         void Awake()
         {
@@ -130,18 +131,33 @@ namespace Game.Characters{
         void OnMouseOverEnemy(Enemy enemy)
         {
             if (_inAnimation) return;
-            ScanForAttack(enemy);
+            ScanForAttackMouseClick(enemy);
             ScanForDefensiveTrigger();
             ScanForSpecialAbility();
         }
 
-        private void ScanForAttack(Enemy enemy)
+        private void ScanForAttackMouseClick(Enemy enemy)
         {
             if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
             {
-                _targetedEnemy = enemy;
-                FaceToward(_targetedEnemy.transform); //TODO: Consider changing later so that a rotation happens. 
-                PerformAttack(enemy);
+                
+                if (_activeWeapon is MeleeWeaponConfig)
+                {
+                    var distanceFromEnemy = Vector3.Distance(this.transform.position, enemy.transform.position);
+                    if (distanceFromEnemy < _attackRadius)
+                    {
+                        _targetedEnemy = enemy;
+                        FaceToward(_targetedEnemy.transform); //TODO: Consider changing later so that a rotation happens. 
+                        PerformAttack(enemy);
+                    } else {
+                        //MOVE TOWARD THE ENEMY UNTIL IN THE ATTACK RADIUS.
+                        print("Outside of attack radius");
+                    }
+                } else if (_activeWeapon is RangeWeaponConfig){
+                    _targetedEnemy = enemy;
+                    FaceToward(_targetedEnemy.transform); //TODO: Consider changing later so that a rotation happens. 
+                    PerformAttack(enemy);
+                }
             }
         }
 
@@ -169,7 +185,7 @@ namespace Game.Characters{
         private void PerformAttack(Enemy enemy)
         {
             _inAnimation = true;
-            var distanceFromEnemy = Vector3.Distance(enemy.transform.position, this.transform.position);
+            _targetedEnemy = enemy;
             _animOC[DEFAULT_ATTACK] = _activeWeapon.GetAnimation();
             _anim.SetTrigger(ANIMATION_ATTACK);
             StartCoroutine(EndInAnimation(_activeWeapon.GetAnimation().length));
@@ -193,23 +209,15 @@ namespace Game.Characters{
 
         void BeginHit()//Used as an event in the animator.
         { 
-            if (weaponObject == null)
-            {
-                var hitArea = weaponObject.GetComponentInChildren<HitArea>();
-                hitArea.Initialize(_targetedEnemy, this);
-                hitArea.GetComponent<BoxCollider>().enabled = true;
-            } 
-            else if (weaponObject.GetComponent(typeof(MeleeWeapon)))
-            {
-                
-                weaponObject.GetComponent<MeleeWeapon>()
-                    .Initialize(_activeWeapon as MeleeWeaponConfig, _targetedEnemy, this);
-                weaponObject.GetComponent<BoxCollider>().enabled = true;
-            }    
+            var meleeWeapon = _activeWeapon as MeleeWeaponConfig;
+            _targetedEnemy.GetComponent<HealthSystem>().TakeDamage(meleeWeapon.GetAttackDamage());
 		}
 
 		void EndHit()//Used as an event in the animator.
         {
+
+            Debug.LogWarning("Remove the box collider. No longer using this.");
+
             if (weaponObject == null)
             {  // IF NO WEAPON EQUIPPED
                 var hitArea = weaponObject.GetComponentInChildren<HitArea>();
@@ -224,6 +232,9 @@ namespace Game.Characters{
         void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(this.transform.position, _meleeRange);
+
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(this.transform.position, _attackRadius);
         }
     }
 }

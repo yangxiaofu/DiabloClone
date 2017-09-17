@@ -10,7 +10,6 @@ namespace Game.Characters{
 		protected ThirdPersonCharacter character;
 		protected void ProcessMovement()
         {
-            print("remainingDistance " + agent.remainingDistance);
             if (agent.remainingDistance > agent.stoppingDistance)
             {
                 character.Move(agent.desiredVelocity, false, false);
