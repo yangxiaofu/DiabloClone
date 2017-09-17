@@ -13,13 +13,13 @@ namespace Game.Characters{
 		GameObject walkTargetObject;
 
 		// Use this for initialization
-		void Start () {
+		void Start () 
+		{
 			agent = GetComponent<NavMeshAgent>();
-			 character = GetComponent<ThirdPersonCharacter>();
+			character = GetComponent<ThirdPersonCharacter>();
+			_player = GetComponent<Player>();
 			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
 			_cameraRaycaster.NotifyWalkTriggerObservers += OnMouseOverPotentiallyWalkable;
-			_player = GetComponent<Player>();
-			
 		}
 
 		void Update()
@@ -32,6 +32,7 @@ namespace Game.Characters{
 
 			if (_player.inAnimation == true)
 			{
+				print("In Animation");
 				agent.SetDestination(this.transform.position);
 			}
 
@@ -40,7 +41,8 @@ namespace Game.Characters{
 
 		private void OnMouseOverPotentiallyWalkable(Vector3 destination)
         {
-            if (Input.GetMouseButton(0)){
+            if (Input.GetMouseButton(0))
+			{
 				PositionWalkTarget(destination);
 				SetTarget(walkTargetObject.transform);
 			}
@@ -49,14 +51,17 @@ namespace Game.Characters{
 		private void PositionWalkTarget(Vector3 destination)
         {
             walkTargetObject = GameObject.Find(WALK_TARGET);
+
             if (!walkTargetObject)
             {
                 walkTargetObject = new GameObject(WALK_TARGET);				
             }
+
 			walkTargetObject.transform.position = destination;
         }
 
-		void SetTarget(Transform target){
+		private void SetTarget(Transform target)
+		{
 			_target = target;
 		}
 	}

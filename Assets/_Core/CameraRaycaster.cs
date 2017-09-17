@@ -24,6 +24,7 @@ namespace Game.CameraUI{
 			if(Physics.Raycast(ray, out hit, _raycastDistance, (1<<WALKABLE_LAYER_BIT)|(1<<ENEMY_LAYER)))
             {
                 if(RaycastForPotentiallyWalkableLayer(hit)) {
+                    print("Hitting Potentially Walkable");
                     return;
                 }
 
@@ -60,7 +61,8 @@ namespace Game.CameraUI{
             return false;
         }
 
-        private bool HitAWalkableLayer(RaycastHit hit){
+        private bool HitAWalkableLayer(RaycastHit hit)
+        {
             return hit.transform.gameObject.layer == LayerMask.NameToLayer(POTENTIALLY_WALKABLE_LAYER);
         }
 

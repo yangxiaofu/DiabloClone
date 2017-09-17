@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Game.Characters;
 
 namespace Game.Core{
 	public class Follow : MonoBehaviour {
 
-		[SerializeField] GameObject _objectToFollow;
+		Player _player;
 
 		void Start(){
-			Assert.IsNotNull(_objectToFollow, "You need to reference an object to follow in the " + this.gameObject.name);
+			_player = FindObjectOfType<Player>();
+
+			Assert.IsNotNull(_player, "There is no player in the game scene.");
 		}
 
 		void Update(){
-			this.transform.position = _objectToFollow.transform.position;
+			this.transform.position = _player.transform.position;
 		}
 
 	}
