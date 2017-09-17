@@ -11,9 +11,11 @@ namespace Game.Characters{
 		[SerializeField] float _attackDistance = .2f;
 		[SerializeField] float _timeBetweenAttacks = 2f;
         [SerializeField] float _attackDamage = 10f;
+        [SerializeField] AudioClip[] _zombieAudio;
+        
+
         Player _player;
         bool _isAttacking = false;
-        
 
 		void Start()
         {
@@ -79,9 +81,9 @@ namespace Game.Characters{
 
         void BeginHit() //Used as an event in the animator.
         { 
-            FindObjectOfType<Player>()
-                .GetComponent<HealthSystem>()
-                .TakeDamage(_attackDamage);
+            if (_killed) return;
+            if (OutsideOfAttackRadius(Vector3.Distance( this.transform.position, _player.transform.position))) return;
+            _player.GetComponent<HealthSystem>().TakeDamage(_attackDamage);
 		}
 
         void OnDrawGizmos()

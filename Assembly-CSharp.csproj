@@ -71,6 +71,7 @@
      <Compile Include="Assets\_Characters\SpecialAbilities\_PowerAttack\PowerAttackConfig.cs" />
      <Compile Include="Assets\_Characters\SpecialAbilities\SpecialAbilities.cs" />
      <Compile Include="Assets\_Characters\SpecialAbilities\SpecialAbilitiesBehaviour.cs" />
+     <Compile Include="Assets\_Core\AudioTrigger.cs" />
      <Compile Include="Assets\_Core\CameraRaycaster.cs" />
      <Compile Include="Assets\_Core\Follow.cs" />
      <Compile Include="Assets\_Items\_Potions\Potion.cs" />
