@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 4023810cc233d4eb88c9529627f653a7
+timeCreated: 1505277378
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Base
+    100002: Bay Wall
+    100004: Bay Window Roof
+    100006: Bedroom Roof
+    100008: Chimney
+    100010: Cube
+    100012: Cube.001
+    100014: Cube.002
+    100016: Cube.003
+    100018: Cube.004
+    100020: Cube.005
+    100022: Cube.006
+    100024: Cube.007
+    100026: Cube.008
+    100028: Cube.009
+    100030: //RootNode
+    100032: Frame
+    100034: Frame.001
+    100036: Frame.002
+    100038: Frame.003
+    100040: Front Bedroom Window
+    100042: Front Room
+    100044: Garage
+    100046: Garage Door
+    100048: Garage Door Frame
+    100050: Garage Door Frame.001
+    100052: Garage Door Frame.002
+    100054: Garage Roof
+    100056: Garage Room
+    100058: Glass
+    100060: Glass.001
+    100062: Glass.002
+    100064: Glass.003
+    100066: Hemi
+    100068: Main Roof
+    100070: MainRoomLeft
+    100072: MainRoomRight
+    100074: Master Bedroom Roof
+    100076: MasterBedroom
+    100078: Roof
+    100080: Room
+    100082: Window
+    100084: Window.001
+    100086: Window.002
+    400000: Base
+    400002: Bay Wall
+    400004: Bay Window Roof
+    400006: Bedroom Roof
+    400008: Chimney
+    400010: Cube
+    400012: Cube.001
+    400014: Cube.002
+    400016: Cube.003
+    400018: Cube.004
+    400020: Cube.005
+    400022: Cube.006
+    400024: Cube.007
+    400026: Cube.008
+    400028: Cube.009
+    400030: //RootNode
+    400032: Frame
+    400034: Frame.001
+    400036: Frame.002
+    400038: Frame.003
+    400040: Front Bedroom Window
+    400042: Front Room
+    400044: Garage
+    400046: Garage Door
+    400048: Garage Door Frame
+    400050: Garage Door Frame.001
+    400052: Garage Door Frame.002
+    400054: Garage Roof
+    400056: Garage Room
+    400058: Glass
+    400060: Glass.001
+    400062: Glass.002
+    400064: Glass.003
+    400066: Hemi
+    400068: Main Roof
+    400070: MainRoomLeft
+    400072: MainRoomRight
+    400074: Master Bedroom Roof
+    400076: MasterBedroom
+    400078: Roof
+    400080: Room
+    400082: Window
+    400084: Window.001
+    400086: Window.002
+    2300000: Bay Window Roof
+    2300002: Bedroom Roof
+    2300004: Chimney
+    2300006: Cube
+    2300008: Cube.001
+    2300010: Cube.002
+    2300012: Cube.003
+    2300014: Cube.004
+    2300016: Cube.005
+    2300018: Cube.006
+    2300020: Cube.007
+    2300022: Cube.008
+    2300024: Cube.009
+    2300026: Frame
+    2300028: Frame.001
+    2300030: Frame.002
+    2300032: Frame.003
+    2300034: Front Bedroom Window
+    2300036: Front Room
+    2300038: Garage Door
+    2300040: Garage Door Frame
+    2300042: Garage Door Frame.001
+    2300044: Garage Door Frame.002
+    2300046: Garage Roof
+    2300048: Garage Room
+    2300050: Glass
+    2300052: Glass.001
+    2300054: Glass.002
+    2300056: Glass.003
+    2300058: Main Roof
+    2300060: MainRoomLeft
+    2300062: MainRoomRight
+    2300064: Master Bedroom Roof
+    2300066: MasterBedroom
+    2300068: Window.001
+    2300070: Window.002
+    3300000: Bay Window Roof
+    3300002: Bedroom Roof
+    3300004: Chimney
+    3300006: Cube
+    3300008: Cube.001
+    3300010: Cube.002
+    3300012: Cube.003
+    3300014: Cube.004
+    3300016: Cube.005
+    3300018: Cube.006
+    3300020: Cube.007
+    3300022: Cube.008
+    3300024: Cube.009
+    3300026: Frame
+    3300028: Frame.001
+    3300030: Frame.002
+    3300032: Frame.003
+    3300034: Front Bedroom Window
+    3300036: Front Room
+    3300038: Garage Door
+    3300040: Garage Door Frame
+    3300042: Garage Door Frame.001
+    3300044: Garage Door Frame.002
+    3300046: Garage Roof
+    3300048: Garage Room
+    3300050: Glass
+    3300052: Glass.001
+    3300054: Glass.002
+    3300056: Glass.003
+    3300058: Main Roof
+    3300060: MainRoomLeft
+    3300062: MainRoomRight
+    3300064: Master Bedroom Roof
+    3300066: MasterBedroom
+    3300068: Window.001
+    3300070: Window.002
+    4300000: Cube.009
+    4300002: Cube.008
+    4300004: Cube.007
+    4300006: Cube.006
+    4300008: Cube.005
+    4300010: Cube.004
+    4300012: Cube.003
+    4300014: Cube.002
+    4300016: Cube.001
+    4300018: Cube
+    4300020: Garage Door Frame.002
+    4300022: Garage Door Frame.001
+    4300024: Garage Door Frame
+    4300026: Garage Door
+    4300028: Glass
+    4300030: Window.002
+    4300032: Frame.003
+    4300034: Front Room
+    4300036: Glass.003
+    4300038: Frame
+    4300040: Glass.002
+    4300042: Glass.001
+    4300044: Frame.001
+    4300046: Frame.002
+    4300048: Front Bedroom Window
+    4300050: Chimney
+    4300052: MasterBedroom
+    4300054: MainRoomRight
+    4300056: MainRoomLeft
+    4300058: Bay Window Roof
+    4300060: Master Bedroom Roof
+    4300062: Main Roof
+    4300064: Garage Roof
+    4300066: Bedroom Roof
+    4300068: Garage Room
+    10800000: Hemi
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

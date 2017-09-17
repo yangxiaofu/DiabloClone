@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf8ce1eb612e4d5b95c4736d29d89b4, type: 3}
+  m_Name: Bat
+  m_EditorClassIdentifier: 
+  _itemPrefab: {fileID: 1277774602165238, guid: d55ab4e8d4ab64c1a8252228664e34f5,
+    type: 2}
+  _gripTransform: {fileID: 4914878401572760, guid: 1ce6cb5497e8f4dcd9b51307aad382ce,
+    type: 2}
+  _weaponAnimation: {fileID: 7400000, guid: f7d404696aab6a44f814961d95b1230f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 556bd1a8e5f1c40ab8da1276ce414e6b, type: 3}
+  _attackDamage: 50

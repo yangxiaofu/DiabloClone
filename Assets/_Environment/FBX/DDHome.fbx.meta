@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 70c754a0419584c8b8c1e1fa36f59c0e
+timeCreated: 1505188762
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Base
+    100002: Bay Window Roof
+    100004: Bedroom Roof
+    100006: Chimney
+    100008: //RootNode
+    100010: Front Bedroom Window
+    100012: Front Room
+    100014: Garage
+    100016: Garage Roof
+    100018: Garage.001
+    100020: Hemi
+    100022: Main
+    100024: Main Roof
+    100026: Master Bedroom Roof
+    100028: MasterBedroom
+    100030: Roof
+    100032: Room
+    100034: Room.001
+    400000: Base
+    400002: Bay Window Roof
+    400004: Bedroom Roof
+    400006: Chimney
+    400008: //RootNode
+    400010: Front Bedroom Window
+    400012: Front Room
+    400014: Garage
+    400016: Garage Roof
+    400018: Garage.001
+    400020: Hemi
+    400022: Main
+    400024: Main Roof
+    400026: Master Bedroom Roof
+    400028: MasterBedroom
+    400030: Roof
+    400032: Room
+    400034: Room.001
+    2300000: Bay Window Roof
+    2300002: Bedroom Roof
+    2300004: Chimney
+    2300006: Front Bedroom Window
+    2300008: Front Room
+    2300010: Garage Roof
+    2300012: Garage.001
+    2300014: Main Roof
+    2300016: Master Bedroom Roof
+    2300018: MasterBedroom
+    2300020: Room
+    2300022: Room.001
+    3300000: Bay Window Roof
+    3300002: Bedroom Roof
+    3300004: Chimney
+    3300006: Front Bedroom Window
+    3300008: Front Room
+    3300010: Garage Roof
+    3300012: Garage.001
+    3300014: Main Roof
+    3300016: Master Bedroom Roof
+    3300018: MasterBedroom
+    3300020: Room
+    3300022: Room.001
+    4300000: Chimney
+    4300002: MasterBedroom
+    4300004: Room.001
+    4300006: Room
+    4300008: Garage.001
+    4300010: Front Room
+    4300012: Front Bedroom Window
+    4300014: Bay Window Roof
+    4300016: Master Bedroom Roof
+    4300018: Main Roof
+    4300020: Garage Roof
+    4300022: Bedroom Roof
+    10800000: Hemi
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
