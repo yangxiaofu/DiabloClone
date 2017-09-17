@@ -10,8 +10,10 @@ namespace Game.Characters{
         [HeaderAttribute("Enemy Specfic")]
 		[SerializeField] float _attackDistance = .2f;
 		[SerializeField] float _timeBetweenAttacks = 2f;
+        [SerializeField] float _attackDamage = 10f;
         Player _player;
         bool _isAttacking = false;
+        
 
 		void Start()
         {
@@ -22,12 +24,7 @@ namespace Game.Characters{
         }
         void Update()
         {			
-            if (_killed)
-            {
-                DisableHitAreas();
-                return;
-            }
-
+            if (_killed) return;
             DetermineAttackBehaviour();
         }
 
@@ -36,29 +33,37 @@ namespace Game.Characters{
             _player = FindObjectOfType<Player>();
 
             Assert.IsNotNull(_player,
-                "YOu need to drag in a player prefab in the game scene.  Check to make sure the player game object has a player script attached to it."
+                "You need to drag in a player prefab in the game scene.  Check to make sure the player game object has a player script attached to it."
             );
         }
 
         private void DetermineAttackBehaviour()
         {
             var distanceFromPlayer = Vector3.Distance( this.transform.position, _player.transform.position);
-            if (distanceFromPlayer <= _attackDistance && _isAttacking == false)
+
+            if (IsInAttackRadius(distanceFromPlayer)) //IF  can attack player.
             {
                 StartCoroutine(AttackPlayer());
-            }
-            else if (distanceFromPlayer > _attackDistance)
+            } 
+            else if (OutsideOfAttackRadius(distanceFromPlayer))
             {
                 _isAttacking = false;
                 StopCoroutine(AttackPlayer());
             } 
+        }
 
+        private bool IsInAttackRadius(float distanceFromPlayer)
+        {   
+            return distanceFromPlayer <= _attackDistance && _isAttacking == false;
+        }
+
+        private bool OutsideOfAttackRadius(float distanceFromPlayer)
+        {
+            return distanceFromPlayer > _attackDistance;
         }
 
 		private IEnumerator AttackPlayer()
         {
-            Invoke("DisableHitAreas", _attackAnimation.length);
-            
 			_isAttacking = true;
 			this.transform.LookAt(_player.transform); //TODO: Remove thsi and put in another coroutine to turn faster. 
 			while (_isAttacking && !_killed)
@@ -74,27 +79,10 @@ namespace Game.Characters{
 
         void BeginHit() //Used as an event in the animator.
         { 
-			for(int i = 0; i < _hitAreas.Length; i++)
-            {
-				_hitAreas[i].gameObject.SetActive(true);
-                _hitAreas[i].gameObject.GetComponent<BoxCollider>().enabled = true;
-				_hitAreas[i].GetComponent<HitArea>().Initialize(_player, this);
-			}
+            FindObjectOfType<Player>()
+                .GetComponent<HealthSystem>()
+                .TakeDamage(_attackDamage);
 		}
-
-		void EndHit()//Used as an event in the animator.
-        {
-            DisableHitAreas();
-        }
-
-        private void DisableHitAreas() //Used on an invoke method.
-        {
-            for (int i = 0; i < _hitAreas.Length; i++)
-            {
-                _hitAreas[i].gameObject.GetComponent<BoxCollider>().enabled = false;
-                _hitAreas[i].gameObject.SetActive(false);
-            }
-        }
 
         void OnDrawGizmos()
 		{

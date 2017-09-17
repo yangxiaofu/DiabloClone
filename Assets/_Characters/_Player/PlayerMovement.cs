@@ -32,7 +32,6 @@ namespace Game.Characters{
 
 			if (_player.inAnimation == true)
 			{
-				print("In Animation");
 				agent.SetDestination(this.transform.position);
 			}
 
@@ -43,8 +42,7 @@ namespace Game.Characters{
         {
             if (Input.GetMouseButton(0))
 			{
-				PositionWalkTarget(destination);
-				SetTarget(walkTargetObject.transform);
+				SetDestination(destination);
 			}
         }
 
@@ -59,6 +57,12 @@ namespace Game.Characters{
 
 			walkTargetObject.transform.position = destination;
         }
+
+		public void SetDestination(Vector3 destination)
+		{
+			PositionWalkTarget(destination);
+			SetTarget(walkTargetObject.transform);
+		}
 
 		private void SetTarget(Transform target)
 		{

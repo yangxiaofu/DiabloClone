@@ -140,7 +140,6 @@ namespace Game.Characters{
         {
             if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
             {
-                
                 if (_activeWeapon is MeleeWeaponConfig)
                 {
                     var distanceFromEnemy = Vector3.Distance(this.transform.position, enemy.transform.position);
@@ -150,8 +149,9 @@ namespace Game.Characters{
                         FaceToward(_targetedEnemy.transform); //TODO: Consider changing later so that a rotation happens. 
                         PerformAttack(enemy);
                     } else {
-                        //MOVE TOWARD THE ENEMY UNTIL IN THE ATTACK RADIUS.
-                        print("Outside of attack radius");
+                        
+                        GetComponent<PlayerMovement>().SetDestination(enemy.transform.position);
+                        //TODO: Will it automatically hit the enemy or should it just go to the enemy. DO later if necessary. 
                     }
                 } else if (_activeWeapon is RangeWeaponConfig){
                     _targetedEnemy = enemy;
@@ -211,22 +211,6 @@ namespace Game.Characters{
         { 
             var meleeWeapon = _activeWeapon as MeleeWeaponConfig;
             _targetedEnemy.GetComponent<HealthSystem>().TakeDamage(meleeWeapon.GetAttackDamage());
-		}
-
-		void EndHit()//Used as an event in the animator.
-        {
-
-            Debug.LogWarning("Remove the box collider. No longer using this.");
-
-            if (weaponObject == null)
-            {  // IF NO WEAPON EQUIPPED
-                var hitArea = weaponObject.GetComponentInChildren<HitArea>();
-                hitArea.GetComponent<BoxCollider>().enabled = false;
-            } 
-            else if (weaponObject.GetComponent(typeof(MeleeWeapon)))
-            { 
-                weaponObject.GetComponent<BoxCollider>().enabled = false;
-            }
 		}
 
         void OnDrawGizmos()
