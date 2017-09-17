@@ -6,6 +6,10 @@ namespace Game.Characters{
 	public class SpecialAbilitiesSystem : MonoBehaviour {
 		[SerializeField] float _currentEnergy = 100f;
         [SerializeField] float _maxEnergy = 100f;
+        public float energyAsPercentage{
+			get{return _currentEnergy / _maxEnergy;}
+		}
+		
 		[SerializeField] float _regenPerSecond = 1f;
 		[SerializeField] SpecialAbilities _ability;
 
@@ -13,7 +17,6 @@ namespace Game.Characters{
 		{
 			 _ability.AttachComponentTo(this.gameObject);
 		}
-
 
 		void Update()
         {
@@ -34,11 +37,6 @@ namespace Game.Characters{
             _currentEnergy = Mathf.Clamp(_currentEnergy, 0, _maxEnergy);
         }
 
-        public float energyAsPercentage{
-			get{
-				return _currentEnergy / _maxEnergy;
-			}
-		}
 
 		public void ConsumeEnergy(float energyToConsume)
 		{

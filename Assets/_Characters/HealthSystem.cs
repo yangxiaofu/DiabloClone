@@ -12,7 +12,7 @@ namespace Game.Characters{
 		{
 			return _currentHealth;
 		}
-
+		
 		public void AddToCurrentHealth(float value)
 		{
 			_currentHealth += value;

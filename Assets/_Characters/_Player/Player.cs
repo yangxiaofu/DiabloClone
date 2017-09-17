@@ -11,9 +11,11 @@ namespace Game.Characters{
 
     [RequireComponent(typeof(Animator))]
 	public class Player : Character {
+        [HeaderAttribute("Player Setup")]
+
+        [HeaderAttribute("Player Variables")]
         [SerializeField] GameObject _projectilePrefab; //TODO: Refactor out to weapon later.
         [SerializeField] Transform _projectileSocket;
-
         
         [TooltipAttribute("Anything within this range will use a melee weapon for attacking.")]
         [SerializeField] float _meleeRange = 2f;
@@ -21,6 +23,11 @@ namespace Game.Characters{
         GameObject weaponObject;
         Enemy _targetedEnemy;
         InventorySystem _inventory;
+
+        void Awake()
+        {
+            gameObject.AddComponent<AudioSource>();
+        }
 
         void Start()
         {

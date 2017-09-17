@@ -6,21 +6,20 @@ using UnityEngine.UI;
 namespace Game.Characters{
 	public class EnergyBar : MonoBehaviour {
 
-	    RawImage healthBarRawImage;
+	    Image _orb;
         SpecialAbilitiesSystem _energySystem;
 
         // Use this for initialization
         void Start()
         {
             _energySystem = FindObjectOfType<Player>().GetComponent<SpecialAbilitiesSystem>();
-            healthBarRawImage = GetComponent<RawImage>();
+            _orb = GetComponent<Image>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            float xValue = -(_energySystem.energyAsPercentage / 2f) - 0.5f;
-            healthBarRawImage.uvRect = new Rect(xValue, 0f, 0.5f, 1f);
+            _orb.fillAmount = _energySystem.energyAsPercentage;
         }
 	}
 }
