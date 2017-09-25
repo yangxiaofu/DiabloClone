@@ -9,7 +9,6 @@ using System;
 
 namespace Game.Characters{
 
-    [RequireComponent(typeof(Animator))]
 	public class Player : Character {
         [HeaderAttribute("Player Setup")]
 
@@ -19,15 +18,34 @@ namespace Game.Characters{
         
         [TooltipAttribute("Anything within this range will use a melee weapon for attacking.")]
         [SerializeField] float _meleeRange = 2f;
+        [SerializeField] float _attackRadius = 2f;
+
+        [HeaderAttribute("Animator")]
+		[SerializeField] Avatar _avatar;
+		[SerializeField] RuntimeAnimatorController _controller;
+        
+		[HeaderAttribute("Capsule Collider")]
+		[SerializeField] float _radius = 0.3f;
+		[SerializeField] float _height = 1.6f;
+        CapsuleCollider m_Capsule;
+
         CameraRaycaster _cameraRaycaster;
         GameObject weaponObject;
         Enemy _targetedEnemy;
         InventorySystem _inventory;
-        [SerializeField] float _attackRadius = 2f;
+        
 
         void Awake()
         {
             gameObject.AddComponent<AudioSource>();
+
+            m_Capsule = gameObject.AddComponent<CapsuleCollider>();
+			m_Capsule.radius = _radius;
+			m_Capsule.height = _height;
+
+            var m_Animator = gameObject.AddComponent<Animator>();
+			m_Animator.runtimeAnimatorController = _controller;
+			m_Animator.avatar = _avatar;
         }
 
         void Start()

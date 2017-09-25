@@ -10,11 +10,15 @@ namespace Game.Characters{
 		Player _player;
         bool _killTriggered = false;
 
+        void Awake()
+        {
+            AddCharacterComponents();
+        }
+
 		void Start()
         {
-			_player = FindObjectOfType<Player>();
-			agent = GetComponent<NavMeshAgent>();
-			character = GetComponent<ThirdPersonCharacter>();
+			_player = FindObjectOfType<Player>();	
+            GetCharacterComponents();
 		}
 
         void Update()

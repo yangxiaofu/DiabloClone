@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4683179615428708}
   m_Layer: 0
-  m_Name: Home F
+  m_Name: House A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,17 +12,22 @@ namespace Game.Characters{
 		const string WALK_TARGET = "Walk Target";
 		GameObject walkTargetObject;
 
-		// Use this for initialization
-		void Start () 
-		{
-			agent = GetComponent<NavMeshAgent>();
-			character = GetComponent<ThirdPersonCharacter>();
-			_player = GetComponent<Player>();
-			_cameraRaycaster = FindObjectOfType<CameraRaycaster>();
-			_cameraRaycaster.NotifyWalkTriggerObservers += OnMouseOverPotentiallyWalkable;
-		}
+        void Awake()
+        {
+			AddCharacterComponents();
+        }
 
-		void Update()
+		// Use this for initialization
+		void Start ()
+        {
+            _player = GetComponent<Player>();
+            _cameraRaycaster = FindObjectOfType<CameraRaycaster>();
+            _cameraRaycaster.NotifyWalkTriggerObservers += OnMouseOverPotentiallyWalkable;
+
+			GetCharacterComponents();
+        }
+
+        void Update()
 		{
 			
 			if (_target != null && _player.inAnimation == false)
