@@ -12,7 +12,7 @@ namespace Game.Characters{
         // Use this for initialization
         void Start()
         {
-            _energySystem = FindObjectOfType<Player>().GetComponent<SpecialAbilitiesSystem>();
+            _energySystem = FindObjectOfType<PlayerControl>().GetComponent<SpecialAbilitiesSystem>();
             _orb = GetComponent<Image>();
         }
 

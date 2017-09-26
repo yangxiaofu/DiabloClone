@@ -13,7 +13,6 @@ namespace Game.Characters{
 			get{return _potions;}
 			set{_potions = value;}
 		}
-
         public void AddToInventory(PotionConfig potion)
         {
             _potions.Add(potion);

@@ -7,19 +7,19 @@ namespace Game.Characters{
     public class PlayerHealthBar : MonoBehaviour
     {
         Image _image;
-        Player player;
+        PlayerControl playerControl;
 
         // Use this for initialization
         void Start()
         {
-            player = FindObjectOfType<Player>();
+            playerControl = FindObjectOfType<PlayerControl>();
             _image = GetComponent<Image>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            _image.fillAmount = player.GetHealthSystem().healthAsPercentage;   
+            _image.fillAmount = playerControl.GetComponent<HealthSystem>().healthAsPercentage;
         }
     }
 

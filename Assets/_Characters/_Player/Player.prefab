@@ -725,8 +725,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4346984713071876}
-  - component: {fileID: 95524278513150668}
-  - component: {fileID: 114467577229530840}
+  - component: {fileID: 114768195460380890}
   - component: {fileID: 114466481587194488}
   - component: {fileID: 114126571606281710}
   - component: {fileID: 114701329294432988}
@@ -1680,23 +1679,6 @@ Transform:
   m_Father: {fileID: 4306008249251716}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95524278513150668
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812238878786844}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e42d9259129992a4d95e0b320ca2a43d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114126571606281710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1744,42 +1726,15 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.2
-  _stoppingDistance: 0.2
-  _speed: 1
-  _radius: 0.3
-  _height: 1.6
-  _avatar: {fileID: 0}
-  _controller: {fileID: 0}
---- !u!114 &114467577229530840
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812238878786844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f281d95b3db46059e7944028bb641a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitDamage: 10
-  _timeBeforeDestroying: 5
-  _animOC: {fileID: 22100000, guid: 5904ce694c21f4d2f97c870352ec8d70, type: 2}
-  _activeWeapon: {fileID: 0}
-  _attackAnimation: {fileID: 7400000, guid: 81754c45db0a5cb459cc5f83651bb3de, type: 3}
-  _deathAnimations:
-  - {fileID: 7400000, guid: f538d4d75e47a314c86dfb82261207b9, type: 3}
-  - {fileID: 7400000, guid: 32b1d03a7b084a343a777d3a7815866b, type: 3}
-  - {fileID: 7400000, guid: 5fa3716fb51c5d2448c0c050e0803819, type: 3}
-  DEFAULT_ATTACK: DEFAULT_ATTACK
-  ANIMATION_ATTACK: Attack
-  _inAnimation: 0
+  _activeWeapon: {fileID: 11400000, guid: 21b689dc2776e4e9d87d96ffc026291c, type: 2}
+  _stoppingDistance: 1
+  _speed: 3
+  _meleeRange: 2
+  _attackRadius: 2
   _projectilePrefab: {fileID: 1468184632350258, guid: f0e27894887b7476ab9e05b0dd26f83c,
     type: 2}
-  _projectileSocket: {fileID: 4484936649577664}
-  _meleeRange: 2
-  _avatar: {fileID: 9000000, guid: e42d9259129992a4d95e0b320ca2a43d, type: 3}
-  _controller: {fileID: 22100000, guid: 5904ce694c21f4d2f97c870352ec8d70, type: 2}
-  _attackRadius: 2
+  ANIMATION_ATTACK: Attack
+  DEFAULT_ATTACK: DEFAULT_ATTACK
 --- !u!114 &114588692075923768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1811,6 +1766,29 @@ MonoBehaviour:
   _hitAudio:
   - {fileID: 8300000, guid: 42741e564a2454f259ea95a2598f0deb, type: 3}
   - {fileID: 8300000, guid: 86c3632b85cab441aa9e4573b6999952, type: 3}
+--- !u!114 &114768195460380890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812238878786844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305a203d7f99445e1a57feaabc64ac0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitDamage: 10
+  _timeBeforeDestroying: 5
+  _animOC: {fileID: 22100000, guid: 5904ce694c21f4d2f97c870352ec8d70, type: 2}
+  _avatar: {fileID: 9000000, guid: e42d9259129992a4d95e0b320ca2a43d, type: 3}
+  _controller: {fileID: 22100000, guid: 5904ce694c21f4d2f97c870352ec8d70, type: 2}
+  _attackAnimation: {fileID: 7400000, guid: 81754c45db0a5cb459cc5f83651bb3de, type: 3}
+  _radius: 0.3
+  _height: 1.6
+  _deathAnimations:
+  - {fileID: 7400000, guid: f538d4d75e47a314c86dfb82261207b9, type: 3}
+  - {fileID: 7400000, guid: 32b1d03a7b084a343a777d3a7815866b, type: 3}
+  - {fileID: 7400000, guid: 5fa3716fb51c5d2448c0c050e0803819, type: 3}
 --- !u!137 &137135240863155920
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

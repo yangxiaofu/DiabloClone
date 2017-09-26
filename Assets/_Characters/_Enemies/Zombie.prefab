@@ -200,11 +200,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4663837912519952}
-  - component: {fileID: 95181093528056156}
-  - component: {fileID: 136163147952051366}
-  - component: {fileID: 82936635435786300}
+  - component: {fileID: 114610071314424940}
   - component: {fileID: 114195983879095162}
-  - component: {fileID: 114686377781836480}
   - component: {fileID: 114510653212086624}
   m_Layer: 10
   m_Name: Zombie
@@ -880,7 +877,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241670953103956}
   m_LocalRotation: {x: -0, y: 0.536616, z: -0, w: 0.8438266}
-  m_LocalPosition: {x: 242.23222, y: 0, z: 154.96082}
+  m_LocalPosition: {x: 239.76, y: 0, z: 151.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4333173575045638}
@@ -1122,103 +1119,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.36476257, y: 0.27053985, z: 0.24000025}
   m_Center: {x: -0.07337712, y: 0.056131665, z: 0.010261122}
---- !u!82 &82936635435786300
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241670953103956}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!95 &95181093528056156
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241670953103956}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9b6c907956c020941aedc6f3992685e0, type: 3}
-  m_Controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114195983879095162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1238,6 +1138,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.2
+  _activeWeapon: {fileID: 0}
   _stoppingDistance: 0.2
   _speed: 0.5
   _moveDistanceFromTarget: 17.31
@@ -1282,7 +1183,7 @@ MonoBehaviour:
   _hitAudio:
   - {fileID: 8300000, guid: 42741e564a2454f259ea95a2598f0deb, type: 3}
   - {fileID: 8300000, guid: 86c3632b85cab441aa9e4573b6999952, type: 3}
---- !u!114 &114686377781836480
+--- !u!114 &114610071314424940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1290,25 +1191,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241670953103956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb46a189b785430a8b5011e3df4b9cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 305a203d7f99445e1a57feaabc64ac0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hitDamage: 10
   _timeBeforeDestroying: 5
   _animOC: {fileID: 22100000, guid: b226fd28650274101b7c9d6827495df3, type: 2}
-  _activeWeapon: {fileID: 0}
+  _avatar: {fileID: 9000000, guid: b1b990ec0fafdc64b8f7cad54d283fbc, type: 3}
   _attackAnimation: {fileID: 7400000, guid: 81754c45db0a5cb459cc5f83651bb3de, type: 3}
+  _radius: 0.3
+  _height: 1.6
   _deathAnimations:
   - {fileID: 7400000, guid: f538d4d75e47a314c86dfb82261207b9, type: 3}
   - {fileID: 7400000, guid: 32b1d03a7b084a343a777d3a7815866b, type: 3}
   - {fileID: 7400000, guid: 5fa3716fb51c5d2448c0c050e0803819, type: 3}
-  DEFAULT_ATTACK: DEFAULT_ATTACK
-  ANIMATION_ATTACK: Attack
-  _inAnimation: 0
-  _attackDistance: 0.98
-  _timeBetweenAttacks: 2
-  _attackDamage: 10
-  _zombieAudio: []
 --- !u!114 &114780674512699210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1321,19 +1217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitDamage: 10
---- !u!136 &136163147952051366
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241670953103956}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.27
-  m_Height: 2.22
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.65, z: 0}
 --- !u!137 &137443527868965064
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

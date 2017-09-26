@@ -22,7 +22,7 @@ namespace Game.Items{
 			return _projectileSpeed;
 		}
 
-		public void ShootProjectileAt(Enemy enemy, Character shooter)
+		public void ShootProjectileAt(EnemyControl enemy, Character shooter)
 		{
 			_shooter = shooter;
 			if (enemy != null){
@@ -41,8 +41,8 @@ namespace Game.Items{
 		void OnTriggerEnter(Collider other)
 		{
 
-			if (other.GetComponent<Enemy>()){
-				other.GetComponent<Enemy>().GetHealthSystem().TakeDamage(_projectileDamage);
+			if (other.GetComponent<EnemyControl>()){
+				other.GetComponent<HealthSystem>().TakeDamage(_projectileDamage);
 			}
 
 			Destroy(this.gameObject);

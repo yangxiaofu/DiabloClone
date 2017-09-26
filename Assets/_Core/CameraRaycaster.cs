@@ -13,7 +13,7 @@ namespace Game.CameraUI{
 		public delegate void MouseOverPotentiallyWalkable(Vector3 destination);
 		public event MouseOverPotentiallyWalkable NotifyWalkTriggerObservers;
 
-        public delegate void MouseOverEnemy(Enemy enemy);
+        public delegate void MouseOverEnemy(EnemyControl enemy);
         public event MouseOverEnemy NotifyMouseOverEnemyObservers;
 
 		void FixedUpdate()
@@ -47,13 +47,13 @@ namespace Game.CameraUI{
         {
             if (HitAnEnemy(hit))
             {
-                if(hit.transform.gameObject.GetComponent<Enemy>().enabled == false)
+                if(hit.transform.gameObject.GetComponent<EnemyControl>().enabled == false)
                 {
                     return false;
                 }
                 
                 NotifyMouseOverEnemyObservers(
-                    hit.transform.gameObject.GetComponent<Enemy>()
+                    hit.transform.gameObject.GetComponent<EnemyControl>()
                 ); 
                 return true;
             } 
@@ -67,7 +67,7 @@ namespace Game.CameraUI{
 
         private bool HitAnEnemy(RaycastHit hit)
         {
-            return hit.transform.gameObject.GetComponent<Enemy>();
+            return hit.transform.gameObject.GetComponent<EnemyControl>();
         }
 
 

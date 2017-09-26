@@ -6,7 +6,7 @@ namespace Game.Characters{
 	public abstract class SpecialAbilitiesBehaviour : MonoBehaviour {
 
 		public SpecialAbilities _config;
-		protected Player _player;
+		protected PlayerControl _player;
 		protected Animator _anim;
 
 		public void SetConfig(SpecialAbilities config){

@@ -8,38 +8,60 @@ using Game.Items;
 namespace Game.Characters{
 	public class Character : MonoBehaviour {
 		[HeaderAttribute("Character Specific")]
-		
 		[SerializeField] protected float _hitDamage = 10f;
 		[SerializeField] float _timeBeforeDestroying = 5f;
 		[SerializeField] protected AnimatorOverrideController _animOC;
+		[SerializeField] Avatar _avatar;
 		public AnimatorOverrideController animOC{
 			get{return _animOC;}
 			set{_animOC = value;}
 		}
-
-		[SerializeField] protected WeaponConfig _activeWeapon;
 		[SerializeField] protected AnimationClip _attackAnimation;
+
+		[HeaderAttribute("Capsule Collider")]
+		[SerializeField] float _radius = 0.3f;
+		[SerializeField] float _height = 1.6f;
+
+		const string DEFAULT_DEATH = "DEFAULT_DEATH";
+		const string ANIMATION_DEATH = "Death";
+		const string DEFAULT_ATTACK = "DEFAULT_ATTACK";
 		[SerializeField] protected AnimationClip[] _deathAnimations;
 		protected HealthSystem _healthSystem;
-		protected AudioSource _audioSource;
 		public HealthSystem GetHealthSystem()
 		{
 			return _healthSystem;
 		}
 		protected BoxCollider[] _hitAreas;
-		[HideInInspector] public string DEFAULT_ATTACK = "DEFAULT_ATTACK";
-		protected const string DEFAULT_DEATH = "DEFAULT_DEATH";
-		protected const string ANIMATION_DEATH = "Death";
-		[HideInInspector] public string ANIMATION_ATTACK = "Attack";
 		protected Animator _anim; 
 		protected bool _killed = false;
+		
 		public bool killed
         {
             get{return _killed;}
         }
 
-        [SerializeField] protected bool _inAnimation = false;
-        public bool inAnimation{get{return _inAnimation;}}
+ 		void Awake()
+        {
+            gameObject.AddComponent<AudioSource>();
+
+			_anim = gameObject.AddComponent<Animator>();
+			_anim.runtimeAnimatorController = _animOC;
+			_anim.avatar = _avatar;
+			_animOC[DEFAULT_DEATH] = _deathAnimations[
+				UnityEngine.Random.Range(0, _deathAnimations.Length)
+			];
+			_animOC[DEFAULT_ATTACK] = _attackAnimation;
+
+			var m_Capsule = gameObject.AddComponent<CapsuleCollider>();
+			m_Capsule.radius = _radius;
+			m_Capsule.height = _height;
+			
+        }
+
+		void Start()
+		{
+			SetupHitAreaBoxCollidersOnBodyParts();
+		}
 
 		public IEnumerator KillCharacter()
         {
@@ -48,31 +70,18 @@ namespace Game.Characters{
             Destroy(this.gameObject);
         }
 
-		public IEnumerator EndInAnimation(float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            _inAnimation = false;
-            yield return null;
-        }
-
-		protected void GetCharacterComponents()
-		{
-			_healthSystem = GetComponent<HealthSystem>();
-			_audioSource = GetComponent<AudioSource>();
-		}
-
         private void DisableComponentsInCharacter()
         {
             GetComponent<NavMeshAgent>().isStopped = true;
             GetComponent<CapsuleCollider>().enabled = false;
 			
-			if (GetComponent<Enemy>())
+			if (GetComponent<EnemyControl>())
 			{
-				GetComponent<Enemy>().enabled = false;
+				GetComponent<EnemyControl>().enabled = false;
 			} 
-			else if (GetComponent<Player>()) 
+			else if (GetComponent<PlayerControl>()) 
 			{
-				GetComponent<Player>().enabled = false;
+				GetComponent<PlayerControl>().enabled = false;
 			}
         }
 
@@ -95,40 +104,13 @@ namespace Game.Characters{
 			yield return null;
 		}
 
-		protected void PlayAudio() //Used as a placholder for weapon audio in animation events for weapons. 
-        {
-			if (_audioSource == null) return;
-
-			if (_activeWeapon != null)
-			{
-				Assert.IsNotNull(_activeWeapon.GetAudioClip(), "There is no audio attached to the active weapon");
-				_audioSource.clip = _activeWeapon.GetAudioClip();
-				_audioSource.loop = false;
-				_audioSource.Play();
-			}
-			
-        }
 
         public float GetHitDamage()
         {
             return _hitDamage;
         }
 
-		///Used to continue player movement.
-		protected void EndOfAnimation()//Callback to animation events.  This helps with continuing movement after the animation is complete. 
-        { 
-            _inAnimation = false;
-        }
 
-		protected void OverrideAnimatorController()
-        {
-            _anim = GetComponent<Animator>();
-            _anim.runtimeAnimatorController = _animOC;
-			_animOC[DEFAULT_DEATH] = _deathAnimations[
-				UnityEngine.Random.Range(0, _deathAnimations.Length)
-			];
-			_animOC[DEFAULT_ATTACK] = _attackAnimation;
-        }
 
         protected void SetupHitAreaBoxCollidersOnBodyParts()
         {

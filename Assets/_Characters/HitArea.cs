@@ -27,16 +27,15 @@ namespace Game.Items{
 
         private void DealDamageToDefender(Collider other)
         {
-            if (other.gameObject.GetComponent<Player>() && _defender.GetComponent<Player>())
+            if (other.gameObject.GetComponent<PlayerControl>() && _defender.GetComponent<PlayerControl>())
             {
-                _defender.GetComponent<Player>()
-                    .GetHealthSystem()
+                _defender.GetComponent<PlayerControl>()
+                    .GetComponent<HealthSystem>()
                     .TakeDamage(_attacker.GetHitDamage());
             }
-            else if (other.gameObject.GetComponent<Enemy>() && _defender.GetComponent<Enemy>())
+            else if (other.gameObject.GetComponent<EnemyControl>() && _defender.GetComponent<EnemyControl>())
             {
-                _defender.GetComponent<Enemy>()
-                    .GetHealthSystem()
+                _defender.GetComponent<HealthSystem>()
                     .TakeDamage(_attacker.GetHitDamage());
             }
         }

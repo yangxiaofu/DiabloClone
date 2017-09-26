@@ -9,7 +9,7 @@ namespace Game.Characters{
     {
         void Start() 
         {
-            _player = GetComponent<Player>();
+            _player = GetComponent<PlayerControl>();
             _anim = GetComponent<Animator>();  
         }
         public override void Use()
@@ -18,7 +18,7 @@ namespace Game.Characters{
             PlayParticleSystem();
             SetupAttackAnimation();
             DealDamageToEnemies();
-            StartCoroutine(_player.EndInAnimation(_config.GetAnimation().length));
+            StartCoroutine(_player.GetComponent<PlayerControl>().EndInAnimation(_config.GetAnimation().length));
         }
 
         private void ConsumeEnergy()
@@ -37,9 +37,9 @@ namespace Game.Characters{
 
         private void SetupAttackAnimation()
         {
-            _player.animOC[_player.DEFAULT_ATTACK] = _config.GetAnimation();
-            _anim.SetTrigger(_player.ANIMATION_ATTACK);
-            StartCoroutine(_player.EndInAnimation(_config.GetAnimation().length));
+            _player.GetComponent<Character>().animOC[_player.GetComponent<PlayerControl>().DEFAULT_ATTACK] = _config.GetAnimation();
+            _anim.SetTrigger(_player.GetComponent<PlayerControl>().ANIMATION_ATTACK);
+            StartCoroutine(_player.GetComponent<PlayerControl>().EndInAnimation(_config.GetAnimation().length));
         }
 
         private void DealDamageToEnemies()
@@ -49,9 +49,9 @@ namespace Game.Characters{
             for (int i = 0; i < hits.Length; i++)
             {
                 var character = hits[i].collider.gameObject.GetComponent<Character>();
-                if (character && character is Enemy)
+                if (character && character.GetComponent<EnemyControl>())
                 {
-                    character.GetComponent<Enemy>().GetHealthSystem().TakeDamage(_config.GetAttackDamage());
+                    character.GetComponent<HealthSystem>().TakeDamage(_config.GetAttackDamage());
                 }
             }
         }

@@ -7,10 +7,10 @@ using Game.Characters;
 namespace Game.Core{
 	public class Follow : MonoBehaviour {
 
-		Player _player;
+		PlayerControl _player;
 
 		void Start(){
-			_player = FindObjectOfType<Player>();
+			_player = FindObjectOfType<PlayerControl>();
 
 			Assert.IsNotNull(_player, "There is no player in the game scene.");
 		}

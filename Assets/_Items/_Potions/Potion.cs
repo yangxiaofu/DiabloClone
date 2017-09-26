@@ -15,10 +15,10 @@ namespace Game.Items{
 
 		void OnTriggerEnter(Collider other)
 		{
-			if (other.gameObject.GetComponent<Player>())
+			if (other.gameObject.GetComponent<PlayerControl>())
 			{
-				var player = other.gameObject.GetComponent<Player>();
-				player.AddItemToInventory(_potionConfig);
+				var player = other.gameObject.GetComponent<PlayerControl>();
+				player.GetComponent<PlayerControl>().AddItemToInventory(_potionConfig);
 				Destroy(this.gameObject);
 			}
 		}
