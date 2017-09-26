@@ -104,13 +104,10 @@ namespace Game.Characters{
 			yield return null;
 		}
 
-
         public float GetHitDamage()
         {
             return _hitDamage;
         }
-
-
 
         protected void SetupHitAreaBoxCollidersOnBodyParts()
         {

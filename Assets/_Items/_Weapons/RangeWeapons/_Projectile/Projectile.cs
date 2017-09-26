@@ -11,8 +11,6 @@ namespace Game.Items{
 		[SerializeField] float _projectileDamage = 10f;
 		[SerializeField] float _timeBeforeDestroying = 2f;
 		Collider _collider;
-		Character _shooter;
-
 		void Start(){
 			_collider = GetComponent<Collider>();
 			Assert.IsNotNull(_collider, "You do not have a box collider on the projectile");
@@ -22,9 +20,8 @@ namespace Game.Items{
 			return _projectileSpeed;
 		}
 
-		public void ShootProjectileAt(EnemyControl enemy, Character shooter)
+		public void ShootProjectileAt(EnemyControl enemy)
 		{
-			_shooter = shooter;
 			if (enemy != null){
 				var direction = (enemy.transform.position - this.transform.position).normalized;
 				GetComponent<Rigidbody>().velocity = direction * _projectileSpeed;
