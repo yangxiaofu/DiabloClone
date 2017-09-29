@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Game.Items;
+using System;
 
 namespace Game.Characters{
 	[System.SerializableAttribute]
@@ -32,7 +33,12 @@ namespace Game.Characters{
 		{
 			return _potions.Count;
 		}
-	}
+
+        public void AddItemToInventory(ItemConfig item)
+        {
+			print("Adding the item " + item.name);
+        }
+    }
 
 }
 

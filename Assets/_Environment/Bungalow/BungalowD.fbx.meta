@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: c85c8f57c255244c39e90f41d20a52f2
+timeCreated: 1506399954
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DoorFrame
+    100004: DoorFrame.001
+    100006: Ground
+    100008: Hemi
+    100010: House Base
+    100012: Human Scale
+    100014: Pillar
+    100016: Pillar.001
+    100018: Pillar.002
+    100020: Pillar.003
+    100022: Porch
+    100024: Porch Wall Front
+    100026: Roof_Base_Left
+    100028: Roof_Base_Main
+    100030: Roof_Base_Right
+    100032: RoofTop_Left
+    100034: RoofTop_Main
+    100036: RoofTop_Right
+    100038: Top White Base
+    100040: WindowFrame
+    100042: WindowFrame.001
+    100044: WindowFrame.002
+    100046: WindowFrame.003
+    100048: WindowFrame.004
+    100050: WindowFrame.005
+    100052: WindowFrame.006
+    100054: WindowFrame.007
+    100056: WindowFrame.008
+    100058: WindowFrame.009
+    100060: WindowFrame.010
+    100062: WindowFrame.011
+    100064: WindowFrame.015
+    100066: WindowFrame.016
+    100068: WindowFrame.017
+    100070: WindowFrame.018
+    100072: WindowFrame.019
+    100074: WindowFrame.020
+    100076: WindowFrame.021
+    100078: WindowFrame.022
+    100080: WindowFrame.023
+    100082: WindowFrame.024
+    100084: WindowFrame.025
+    100086: WindowFrame.026
+    100088: WindowFrame.027
+    100090: WindowFrame.028
+    100092: WindowFrame.029
+    100094: WindowFrame.030
+    100096: WindowFrame.031
+    100098: WindowFrame.032
+    100100: WindowFrame.033
+    100102: WindowFrame.034
+    400000: //RootNode
+    400002: DoorFrame
+    400004: DoorFrame.001
+    400006: Ground
+    400008: Hemi
+    400010: House Base
+    400012: Human Scale
+    400014: Pillar
+    400016: Pillar.001
+    400018: Pillar.002
+    400020: Pillar.003
+    400022: Porch
+    400024: Porch Wall Front
+    400026: Roof_Base_Left
+    400028: Roof_Base_Main
+    400030: Roof_Base_Right
+    400032: RoofTop_Left
+    400034: RoofTop_Main
+    400036: RoofTop_Right
+    400038: Top White Base
+    400040: WindowFrame
+    400042: WindowFrame.001
+    400044: WindowFrame.002
+    400046: WindowFrame.003
+    400048: WindowFrame.004
+    400050: WindowFrame.005
+    400052: WindowFrame.006
+    400054: WindowFrame.007
+    400056: WindowFrame.008
+    400058: WindowFrame.009
+    400060: WindowFrame.010
+    400062: WindowFrame.011
+    400064: WindowFrame.015
+    400066: WindowFrame.016
+    400068: WindowFrame.017
+    400070: WindowFrame.018
+    400072: WindowFrame.019
+    400074: WindowFrame.020
+    400076: WindowFrame.021
+    400078: WindowFrame.022
+    400080: WindowFrame.023
+    400082: WindowFrame.024
+    400084: WindowFrame.025
+    400086: WindowFrame.026
+    400088: WindowFrame.027
+    400090: WindowFrame.028
+    400092: WindowFrame.029
+    400094: WindowFrame.030
+    400096: WindowFrame.031
+    400098: WindowFrame.032
+    400100: WindowFrame.033
+    400102: WindowFrame.034
+    2300000: DoorFrame
+    2300002: DoorFrame.001
+    2300004: Ground
+    2300006: House Base
+    2300008: Human Scale
+    2300010: Pillar
+    2300012: Pillar.001
+    2300014: Pillar.002
+    2300016: Pillar.003
+    2300018: Porch
+    2300020: Porch Wall Front
+    2300022: Roof_Base_Left
+    2300024: Roof_Base_Main
+    2300026: Roof_Base_Right
+    2300028: RoofTop_Left
+    2300030: RoofTop_Main
+    2300032: RoofTop_Right
+    2300034: Top White Base
+    2300036: WindowFrame
+    2300038: WindowFrame.001
+    2300040: WindowFrame.002
+    2300042: WindowFrame.003
+    2300044: WindowFrame.004
+    2300046: WindowFrame.005
+    2300048: WindowFrame.006
+    2300050: WindowFrame.007
+    2300052: WindowFrame.008
+    2300054: WindowFrame.009
+    2300056: WindowFrame.010
+    2300058: WindowFrame.011
+    2300060: WindowFrame.015
+    2300062: WindowFrame.016
+    2300064: WindowFrame.017
+    2300066: WindowFrame.018
+    2300068: WindowFrame.019
+    2300070: WindowFrame.020
+    2300072: WindowFrame.021
+    2300074: WindowFrame.022
+    2300076: WindowFrame.023
+    2300078: WindowFrame.024
+    2300080: WindowFrame.025
+    2300082: WindowFrame.026
+    2300084: WindowFrame.027
+    2300086: WindowFrame.028
+    2300088: WindowFrame.029
+    2300090: WindowFrame.030
+    2300092: WindowFrame.031
+    2300094: WindowFrame.032
+    2300096: WindowFrame.033
+    2300098: WindowFrame.034
+    3300000: DoorFrame
+    3300002: DoorFrame.001
+    3300004: Ground
+    3300006: House Base
+    3300008: Human Scale
+    3300010: Pillar
+    3300012: Pillar.001
+    3300014: Pillar.002
+    3300016: Pillar.003
+    3300018: Porch
+    3300020: Porch Wall Front
+    3300022: Roof_Base_Left
+    3300024: Roof_Base_Main
+    3300026: Roof_Base_Right
+    3300028: RoofTop_Left
+    3300030: RoofTop_Main
+    3300032: RoofTop_Right
+    3300034: Top White Base
+    3300036: WindowFrame
+    3300038: WindowFrame.001
+    3300040: WindowFrame.002
+    3300042: WindowFrame.003
+    3300044: WindowFrame.004
+    3300046: WindowFrame.005
+    3300048: WindowFrame.006
+    3300050: WindowFrame.007
+    3300052: WindowFrame.008
+    3300054: WindowFrame.009
+    3300056: WindowFrame.010
+    3300058: WindowFrame.011
+    3300060: WindowFrame.015
+    3300062: WindowFrame.016
+    3300064: WindowFrame.017
+    3300066: WindowFrame.018
+    3300068: WindowFrame.019
+    3300070: WindowFrame.020
+    3300072: WindowFrame.021
+    3300074: WindowFrame.022
+    3300076: WindowFrame.023
+    3300078: WindowFrame.024
+    3300080: WindowFrame.025
+    3300082: WindowFrame.026
+    3300084: WindowFrame.027
+    3300086: WindowFrame.028
+    3300088: WindowFrame.029
+    3300090: WindowFrame.030
+    3300092: WindowFrame.031
+    3300094: WindowFrame.032
+    3300096: WindowFrame.033
+    3300098: WindowFrame.034
+    4300000: Pillar.003
+    4300002: Pillar.002
+    4300004: Pillar.001
+    4300006: Pillar
+    4300008: Porch Wall Front
+    4300010: Top White Base
+    4300012: Ground
+    4300014: RoofTop_Right
+    4300016: RoofTop_Main
+    4300018: Roof_Base_Main
+    4300020: Roof_Base_Left
+    4300022: Roof_Base_Right
+    4300024: RoofTop_Left
+    4300026: DoorFrame.001
+    4300028: WindowFrame.034
+    4300030: WindowFrame.033
+    4300032: WindowFrame.032
+    4300034: WindowFrame.031
+    4300036: WindowFrame.030
+    4300038: WindowFrame.029
+    4300040: WindowFrame.028
+    4300042: WindowFrame.027
+    4300044: WindowFrame.026
+    4300046: WindowFrame.025
+    4300048: WindowFrame.024
+    4300050: WindowFrame.023
+    4300052: WindowFrame.022
+    4300054: WindowFrame.021
+    4300056: WindowFrame.020
+    4300058: WindowFrame.019
+    4300060: WindowFrame.018
+    4300062: WindowFrame.017
+    4300064: WindowFrame.016
+    4300066: WindowFrame.015
+    4300068: DoorFrame
+    4300070: WindowFrame.011
+    4300072: WindowFrame.010
+    4300074: WindowFrame.009
+    4300076: WindowFrame.008
+    4300078: WindowFrame.007
+    4300080: WindowFrame.006
+    4300082: WindowFrame.005
+    4300084: WindowFrame.004
+    4300086: WindowFrame.003
+    4300088: WindowFrame.002
+    4300090: WindowFrame.001
+    4300092: WindowFrame
+    4300094: Porch
+    4300096: House Base
+    4300098: Human Scale
+    10800000: Hemi
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
